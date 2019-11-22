@@ -99,6 +99,7 @@ textarea {
 html {
     background: url(../img/construction.jpg) no-repeat center center fixed;
     background-size: cover;
+    width: 100%;
     height: 100%;
    /* set height to 100% - these are important for allowing content to vertically align */
 }
@@ -108,10 +109,11 @@ body {
     /* set height to 100% - these are important for allowing content to vertically align */
 }
 
-.wrapper {
+
+.header {
     /* set the display to flex and use the justify-content & align-items properties to center all child elements on the page */
     margin: 0;
-    height: 100%;
+    height: 35%;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -119,9 +121,7 @@ body {
 }
 
 #content {
-    /* set the display to flex and use the justify-content & align-items properties to center the text within the div*/
-    background: #fff;
-    background:rgba(0,0,0,0.7);
+    background: white;
     color: white;
     font-family: 'Source Sans Pro', sans-serif;
     font-weight: 300;
@@ -136,12 +136,31 @@ body {
     align-items: center;
 }
 
-#content h1 {
+ h2 {
   font-family: 'Raleway', sans-serif;
   font-weight: bold;
   text-transform: uppercase;
 }
 
+.content-wrapper {
+  background: #044f70;
+  margin: 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.about, .projects, .contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  line-height: 1.5em;
+  font-size: 1.25em;
+  width: 30%;
+  height: 200px;
+}
 
 
 
@@ -228,9 +247,17 @@ body {
    Modify as content requires.
    ========================================================================== */
 
-@media only screen and (min-width: 35em) {
-    /* Style adjustments for viewports that meet the condition */
-}
+@media all and (min-width: 1200px) {
+       .about, .projects, .contact {
+         flex-basis: 30%;
+       }
+
+       .about, .projects{
+         border-right: 1px solid grey;
+         padding-right: 30px;
+       }
+   }
+
 
 @media print,
        (-webkit-min-device-pixel-ratio: 1.25),
